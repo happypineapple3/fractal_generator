@@ -25,14 +25,14 @@
 
 import unittest
 from Phoenix import phoenixIterationCount	  	  
-
+from Palette import phoenixPalette
 class TestPhoenix(unittest.TestCase):  	  	   	  	  
   	  
     def test_iterationCount(self):
         """Phoenix iterationCount function works properly"""
-        self.assertEqual(phoenixIterationCount(complex(1.3715877716064453+4.113485813140869j)),0)
-        self.assertEqual(phoenixIterationCount(complex(2.3041632358551025-3.0412960052490234j)),0)  	  
-        self.assertEqual(phoenixIterationCount(complex(2.6351680938720703-2.4042677879333496j)),0)  	  
+        self.assertEqual(phoenixIterationCount(complex(1.3715877716064453+4.113485813140869j), phoenixPalette),0)
+        self.assertEqual(phoenixIterationCount(complex(2.3041632358551025-3.0412960052490234j), phoenixPalette),0)  	  
+        self.assertEqual(phoenixIterationCount(complex(2.6351680938720703-2.4042677879333496j), phoenixPalette),0)  	  
 
 
 if __name__ == '__main__':  	  	  

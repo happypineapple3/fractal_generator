@@ -24,15 +24,16 @@
 
 
 import unittest 
-from Mandelbrot import mandelIterationCount 
+from Mandelbrot import mandelIterationCount
+from Palette import mandelPalette
 
 class TestMandelbrot(unittest.TestCase):  	  	  
  	  	  
     def test_iterationCount(self):
         """Mandelbrot iterationCount function works properly"""
-        self.assertEqual(mandelIterationCount(complex(0.5572265624999999-1.2451171875j)), 1) 
-        self.assertEqual(mandelIterationCount(complex(-0.2999081196223699-0.09429218916331959j)), 110)  	  	  
-        self.assertEqual(mandelIterationCount(complex(-0.4779296875000001-1.2060546875j)), 2)  	  	  
+        self.assertEqual(mandelIterationCount(complex(0.5572265624999999-1.2451171875j), mandelPalette), 1) 
+        self.assertEqual(mandelIterationCount(complex(-0.2999081196223699-0.09429218916331959j), mandelPalette), 110)  	  	  
+        self.assertEqual(mandelIterationCount(complex(-0.4779296875000001-1.2060546875j), mandelPalette), 2)  	  	  
  	  	  
 
 if __name__ == '__main__':  	  	  

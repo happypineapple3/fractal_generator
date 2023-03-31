@@ -22,9 +22,6 @@
 #       or product names of the Licensor, except as required for  	  	  
 #       reasonable and customary use of the source files.  	  	  
 
-from Phoenix import *
-from Mandelbrot import *
-from Palette import *
 from ImagePainter import *
 from FractalInformation import *
 import sys  	  	  

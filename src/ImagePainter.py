@@ -37,8 +37,8 @@ def makeFractalPhoenix(fractalDimensions, fractalName):
         for col in range(IMAGE_SIZE):  	  	   	  
             X = minX + col * pixelSize
             Y = minY + row * pixelSize
-            color = phoenixPalette[phoenixIterationCount(complex(X, Y))]	  
-            colorList.append(color)
+            pixelColor = phoenixPalette[phoenixIterationCount(complex(X, Y), phoenixPalette)]	  
+            colorList.append(pixelColor)
 
         pixls = '{' + ' '.join(colorList) + '}'
         tkPhotoImage.put(pixls, (0, IMAGE_SIZE - row))
@@ -73,8 +73,8 @@ def makeFractalMandel(fractalDimensions, fractalName):
         for col in range(IMAGE_SIZE):  	  	  
             x = minX + col * pixelsize  	  	  
             y = minY + row * pixelsize  	  	   	  
-            color = mandelPalette[mandelIterationCount(complex(x,y))]	  	  
-            colorList.append(color)  
+            pixelColor = mandelPalette[mandelIterationCount(complex(x,y), mandelPalette)]	  	  
+            colorList.append(pixelColor)  
 
         tkPhotoImage.put('{' + ' '.join(colorList) + '}', to=(0, IMAGE_SIZE-row))  	  	  
         tkWindow.update()  	  	  

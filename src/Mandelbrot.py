@@ -1,16 +1,13 @@
-MAX_ITERATIONS = 111
-
-def mandelIterationCount(coordinates):  	  
-    z = complex(0, 0) 	  	   	  	  
-    for i in range(MAX_ITERATIONS):  	  	  
+def mandelIterationCount(coordinates, palette):  	  
+    z = complex(0, 0)
+    maxIterations = (len(palette))	  	  
+    for i in range(maxIterations):  	  	  
         z = z * z + coordinates 
         if abs(z) > 2:  	  	  
             z = 2 	  	   	  	  
-            if i >= MAX_ITERATIONS:  	  	  
-                i = MAX_ITERATIONS - 1 
-            print(i)
-            print(coordinates)  	  	  	  
+            if i >= maxIterations:  	  	  
+                i = maxIterations - 1   	  	  
             return i  	  
-    return MAX_ITERATIONS-1
+    return maxIterations-1
 	  	  
      
