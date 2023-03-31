@@ -25,13 +25,10 @@
 
 import unittest  	  	  
 
-from Testing import testMandelbrot, testPhoenix  	  	  
-from Testing import testAssertions  # TODO: delete from the final submission  	  	  
-
+from Testing import testMandelbrot, testPhoenix, testPallete, testFractalInformation
 
 suite = unittest.TestSuite()  	  	  
-tests = [testMandelbrot.TestMandelbrot, testPhoenix.TestPhoenix]  	  	  
-tests.append(testAssertions.TestAssertions)  # TODO: delete from the final submission  	  	  
+tests = [testMandelbrot.TestMandelbrot, testPhoenix.TestPhoenix, testPallete.TestPallete, testFractalInformation.TestFractalInformation]  	  	  
 
 for test in tests:  	  	  
     suite.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(test))  	  	  
