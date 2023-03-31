@@ -60,7 +60,13 @@ class TestMandelbrot(unittest.TestCase):
 
     def test_palleteLength(self):  	  	  
         """Palette contains the expected number of colors"""  	  	  
-        self.assertEqual(111, len(palette))  	  	  
+        self.assertEqual(111, len(palette))
+
+    def test_iterationCount(self):
+        self.assertEqual(returnCount(complex(-0.5355181132383975-0.2754594079186278j)), 110) 
+        self.assertEqual(returnCount(complex(-0.2999081196223699-0.09429218916331959j)), 5)  	  	  
+        self.assertEqual(returnCount(complex(-0.35846676339140776-0.12805609901740406j)), 73)  	  	  
+ 	  	  
 
 
 if __name__ == '__main__':  	  	  

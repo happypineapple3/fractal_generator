@@ -6,7 +6,7 @@
 |-------------|------------|--------------------
 | March 21    | 1 hour     | Read over project requirements and a bit of source code.
 | March 26    | 2 hours    | Finished phase 0 in Plan.md.
-| Nocember 11 | 1.25 hours | Restinguet citius, si ardentem acceperit.
+| March 30    | 4 hours    | Finished the entirety of phase 1.
 | Nocember 12 | 2.5 hours  | Quid de Platone aut de Democrito loquar.
 | Nocember 13 | 0.25 hours | Istic sum, inquit. Quae in controversiam veniunt, de iis, si placet, disseramus.
 | Nocember 14 | 0 hours    | Id mihi magnum videtur. Eid, Pmurt, Eid. Maximus dolor, inquit, brevis est.

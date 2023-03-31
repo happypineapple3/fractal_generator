@@ -24,7 +24,7 @@
 
 
 import unittest  	  	  
-from phoenix_fractal import getColorFromPalette, grad, WHITE, f  	  	  
+from phoenix_fractal import getColorFromPalette, grad, f  	  	  
 from phoenix_fractal import getFractalConfigurationDataFromFractalRepositoryDictionary  	  	  
 
 
@@ -59,6 +59,11 @@ class TestPhoenix(unittest.TestCase):
     def test_gradientLength(self):  	  	  
         """Color palette contains the expected number of colors"""  	  	  
         self.assertEqual(108, len(grad))  	  	  
+
+    def test_iterationCount(self):
+        self.assertEqual(returnCount(complex(1.503836958714585+1.5732979202452546j)),44)
+        self.assertEqual(returnCount(complex(-2.1822185071296336-0.27872273327527114j)),97)  	  
+        self.assertEqual(returnCount(complex(0.5888337444470251-2.3784217901886686j) ),41)  	  
 
 
 if __name__ == '__main__':  	  	  
