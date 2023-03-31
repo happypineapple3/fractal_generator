@@ -15,7 +15,7 @@ def printProgress(pixelSize, count):
             , file=sys.stderr)  	  	  
 
 
-def makeFractalPhoenix(fractalDimensions, fractalName):
+def makeFractal(fractalDimensions, fractalName, fractalType):
 
     before = time()
 	  	  
@@ -37,7 +37,10 @@ def makeFractalPhoenix(fractalDimensions, fractalName):
         for col in range(IMAGE_SIZE):  	  	   	  
             X = minX + col * pixelSize
             Y = minY + row * pixelSize
-            pixelColor = phoenixPalette[phoenixIterationCount(complex(X, Y), phoenixPalette)]	  
+            if fractalType == 'phoenix':
+                pixelColor = phoenixPalette[phoenixIterationCount(complex(X, Y), phoenixPalette)]
+            else:
+                pixelColor = mandelPalette[mandelIterationCount(complex(X,Y), mandelPalette)]
             colorList.append(pixelColor)
 
         pixls = '{' + ' '.join(colorList) + '}'
@@ -45,40 +48,6 @@ def makeFractalPhoenix(fractalDimensions, fractalName):
         tkWindow.update()
         printProgress(IMAGE_SIZE, row)
 
-    print(f"\nWrote picture {fractalName}.png", file=sys.stderr)  	
-    after = time()	  
-    print(f"\nDone in {after - before:.3f} seconds!", file=sys.stderr)  
-    tkPhotoImage.write(f"{fractalName}.png")  	  	  
-    mainloop()
-
-
-def makeFractalMandel(fractalDimensions, fractalName):  	  	  
-    before = time()	  	  
- 	  
-    minX = fractalDimensions['centerX'] - (fractalDimensions['axisLength'] / 2.0)  	  	  
-    maxX = fractalDimensions['centerX'] + (fractalDimensions['axisLength'] / 2.0)  	  	  
-    minY = fractalDimensions['centerY'] - (fractalDimensions['axisLength'] / 2.0)  	  	  
-
-    tkWindow = Tk()
-    tkPhotoImage = PhotoImage(width=IMAGE_SIZE, height=IMAGE_SIZE)
-
-    canvas = Canvas(tkWindow, width=IMAGE_SIZE, height=IMAGE_SIZE, background='#000000')  
-    canvas.pack()
-    canvas.create_image((256, 256), image=tkPhotoImage, state="normal")
-
-    pixelsize = abs(maxX - minX) / IMAGE_SIZE  	  	  
-
-    for row in range(IMAGE_SIZE, 0, -1):  	  	  
-        colorList = []  	  	  
-        for col in range(IMAGE_SIZE):  	  	  
-            x = minX + col * pixelsize  	  	  
-            y = minY + row * pixelsize  	  	   	  
-            pixelColor = mandelPalette[mandelIterationCount(complex(x,y), mandelPalette)]	  	  
-            colorList.append(pixelColor)  
-
-        tkPhotoImage.put('{' + ' '.join(colorList) + '}', to=(0, IMAGE_SIZE-row))  	  	  
-        tkWindow.update()  	  	  
-        printProgress(IMAGE_SIZE, row)
     print(f"\nWrote picture {fractalName}.png", file=sys.stderr)  	
     after = time()	  
     print(f"\nDone in {after - before:.3f} seconds!", file=sys.stderr)  

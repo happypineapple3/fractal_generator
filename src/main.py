@@ -22,31 +22,26 @@
 #       or product names of the Licensor, except as required for  	  	  
 #       reasonable and customary use of the source files.  	  	  
 
-from ImagePainter import *
-from FractalInformation import *
+from ImagePainter import makeFractal
+from FractalInformation import fractalDict
 import sys  	  	  
 
-def phoenix_main(fractalName):  	  	  
+def printFractal(fractalName):  	  	  
     print("Rendering %s fractal" % fractalName, file=sys.stderr)  	  	  	  	  
-    makeFractalPhoenix(fractalDict['phoenixDict'][fractalName], fractalName) 
+    makeFractal(fractalDict[fractalName], fractalName, fractalDict[fractalName]['type']) 
     print("Close the image window to exit the program", file=sys.stderr)  	  	  
 
 
-def mbrot_main(fractalName):  	  	  
-    print("Rendering %s fractal" % fractalName, file=sys.stderr)  	  	  
-    makeFractalMandel(fractalDict['mandelDict'][fractalName], fractalName)	  	    	  
-    print("Close the image window to exit the program", file=sys.stderr)  	  	  
-
-
-if len(sys.argv) < 1:
-    print("USAGE: the first argument needs to be the name of a fractal")
-if sys.argv[1] in fractalDict['phoenixDict'].keys(): 
-    phoenix_main(sys.argv[1])  	  	  
-elif sys.argv[1] in fractalDict['mandelDict'].keys(): 	  	  
-    mbrot_main(sys.argv[1]) 	  
+if len(sys.argv) < 2:
+    print("USAGE: please input the name of one of the following fractals as an argument")
+    for key in fractalDict:
+        print(key)
+    sys.exit(1)
+if sys.argv[1] in fractalDict: 
+    printFractal(sys.argv[1])  	  	    
 else: 
-    print(f"ERROR: {sys.argv[1]} is not a valid fractal.")
+    print(f"ERROR: \'{sys.argv[1]}\' is not a valid fractal.")
     print("Please select from one of the following:")
     for key in fractalDict:
-        for element in fractalDict[key]:
-            print(element)
+        print(key)
+    sys.exit(1)

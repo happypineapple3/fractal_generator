@@ -29,38 +29,37 @@ from FractalInformation import fractalDict
 class TestFractalInformation(unittest.TestCase):  	  	  
     def test_dictionaryLength(self):
         """Testing length of dictionary"""
-        self.assertEqual(len(fractalDict['phoenixDict'].keys()), 4)
-        self.assertEqual(len(fractalDict['mandelDict'].keys()), 8)	  
+        self.assertEqual(len(fractalDict.keys()), 12)
 
     def test_dictionaryContents(self):
         """Testing existent elements in the dictionary"""  
-        self.assertIsNotNone(fractalDict['phoenixDict']['phoenix'])	  	  
-        self.assertIsNotNone(fractalDict['phoenixDict']['peacock'])
-        self.assertIsNotNone(fractalDict['phoenixDict']['monkey-knife-fight'])	  	  
-        self.assertIsNotNone(fractalDict['phoenixDict']['shrimp-cocktail'])
-        self.assertIsNotNone(fractalDict['mandelDict']['mandelbrot'])	  	  
-        self.assertIsNotNone(fractalDict['mandelDict']['mandelbrot-zoomed'])
-        self.assertIsNotNone(fractalDict['mandelDict']['spiral0'])	  	  
-        self.assertIsNotNone(fractalDict['mandelDict']['spiral1'])
-        self.assertIsNotNone(fractalDict['mandelDict']['leaf'])	  	  
-        self.assertIsNotNone(fractalDict['mandelDict']['elephants'])
-        self.assertIsNotNone(fractalDict['mandelDict']['seahorse'])	  	  
-        self.assertIsNotNone(fractalDict['mandelDict']['starfish'])
+        self.assertIsNotNone(fractalDict['phoenix'])	  	  
+        self.assertIsNotNone(fractalDict['peacock'])
+        self.assertIsNotNone(fractalDict['monkey-knife-fight'])	  	  
+        self.assertIsNotNone(fractalDict['shrimp-cocktail'])
+        self.assertIsNotNone(fractalDict['mandelbrot'])	  	  
+        self.assertIsNotNone(fractalDict['mandelbrot-zoomed'])
+        self.assertIsNotNone(fractalDict['spiral0'])	  	  
+        self.assertIsNotNone(fractalDict['spiral1'])
+        self.assertIsNotNone(fractalDict['leaf'])	  	  
+        self.assertIsNotNone(fractalDict['elephants'])
+        self.assertIsNotNone(fractalDict['seahorse'])	  	  
+        self.assertIsNotNone(fractalDict['starfish'])
 
     def test_fractalInformation(self):
-        """Making sure that each subkey has three elements"""
-        self.assertEquals(len(fractalDict['phoenixDict']['phoenix']),3)	  	  
-        self.assertEquals(len(fractalDict['phoenixDict']['peacock']),3)
-        self.assertEquals(len(fractalDict['phoenixDict']['monkey-knife-fight'])	,3)  	  
-        self.assertEquals(len(fractalDict['phoenixDict']['shrimp-cocktail']),3)
-        self.assertEquals(len(fractalDict['mandelDict']['mandelbrot']),3)
-        self.assertEquals(len(fractalDict['mandelDict']['mandelbrot-zoomed']),3)
-        self.assertEquals(len(fractalDict['mandelDict']['spiral0']),3)
-        self.assertEquals(len(fractalDict['mandelDict']['spiral1']),3)
-        self.assertEquals(len(fractalDict['mandelDict']['leaf']),3)  
-        self.assertEquals(len(fractalDict['mandelDict']['elephants']),3)
-        self.assertEquals(len(fractalDict['mandelDict']['seahorse']),3)  	  
-        self.assertEquals(len(fractalDict['mandelDict']['starfish']),3)	  	  
+        """Making sure that each subkey has four elements"""
+        self.assertEquals(len(fractalDict['phoenix']),4)	  	  
+        self.assertEquals(len(fractalDict['peacock']),4)
+        self.assertEquals(len(fractalDict['monkey-knife-fight'])	,4)  	  
+        self.assertEquals(len(fractalDict['shrimp-cocktail']),4)
+        self.assertEquals(len(fractalDict['mandelbrot']),4)
+        self.assertEquals(len(fractalDict['mandelbrot-zoomed']),4)
+        self.assertEquals(len(fractalDict['spiral0']),4)
+        self.assertEquals(len(fractalDict['spiral1']),4)
+        self.assertEquals(len(fractalDict['leaf']),4)  
+        self.assertEquals(len(fractalDict['elephants']),4)
+        self.assertEquals(len(fractalDict['seahorse']),4)  	  
+        self.assertEquals(len(fractalDict['starfish']),4)	  	  
             
 
 
