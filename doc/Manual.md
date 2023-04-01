@@ -1,15 +1,3 @@
-# Fractal Visualizer User Manual
-
-*   This is the **user manual**, not the **programmer's manual**
-    *   Keep your instructions at a user-friendly level.
-*   Explain how to run the program
-    *   What is the name of the main program file?
-    *   What command-line arguments are needed?
-*   What output does the program produce?
-    *   What is shown when the program works correctly?
-    *   What is shown when an error is encountered
-    *   Provide examples of both!
-
 Once the user has navigated to the main repository of where the code is found, the user must type in the following command:
 
 'python src/main.py [FRACTAL NAME]'
