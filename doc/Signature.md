@@ -7,11 +7,8 @@
 | March 30    | 4 hours    | Finished the entirety of phase 1.
 | March 31    | 7 hours    | Finished phase 2 and nearly all of phase 3.
 | March 31    | 3 hours    | Finished the rest of phase 3.
-| March 31    | 1 hour     | Verified submission. Phase 4 complete.
-| Nocember 15 | 3 hours    | Multoque hoc melius nos veriusque quam Stoici.
-| Nocember 16 | 2.25 hours | Rhetorice igitur, inquam, nos mavis quam dialectice disputare.
-| Nocember 17 | 1.5 hours  | Suo genere perveniant ad extremum; Quod quidem nobis non saepe contingit.
-| TOTAL       | 12.5 hours | *Your TOTAL should agree with your daily entries*
+| March 31    | 1 hour     | Verified submission. Finished filling out Plan.md. Phases 4 and 5 are finished.
+| TOTAL       | 18 hours   | *Your TOTAL should agree with your daily entries*
 
 
 ## Signature 5.1
