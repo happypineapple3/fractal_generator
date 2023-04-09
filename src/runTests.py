@@ -25,10 +25,10 @@
 
 import unittest  	  	  
 
-from Testing import testMandelbrot, testPhoenix, testPallete, testFractalInformation
+from Testing import testCount, testPallete
 
 suite = unittest.TestSuite()  	  	  
-tests = [testMandelbrot.TestMandelbrot, testPhoenix.TestPhoenix, testPallete.TestPallete, testFractalInformation.TestFractalInformation]  	  	  
+tests = [testCount.TestFractal, testPallete.TestPallete, ]  	  	  
 
 for test in tests:  	  	  
     suite.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(test))  	  	  

@@ -17,7 +17,7 @@
 |-------------|------------|--------------------
 | April 3     | 1 hour     | Read over all the documentation for the assignment.
 | April 7     | 1.5 hours  | Re-read all the documentation and completed out phase 0.
-| Nocember 21 | 1.25 hours | Restinguet citius, si ardentem acceperit.
+| April 9     | 3 hours    | Completed all of phase 1.
 | Nocember 22 | 2.5 hours  | Quid de Platone aut de Democrito loquar.
 | Nocember 23 | 0.25 hours | Istic sum, inquit. Quae in controversiam veniunt, de iis, si placet, disseramus.
 | Nocember 24 | 0 hours    | Id mihi magnum videtur. Eid, Pmurt, Eid. Maximus dolor, inquit, brevis est.
