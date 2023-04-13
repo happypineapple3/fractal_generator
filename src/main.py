@@ -22,26 +22,37 @@
 #       or product names of the Licensor, except as required for  	  	  
 #       reasonable and customary use of the source files.  	  	  
 
-from ImagePainter import makeFractal
-from FractalInformation import fractalDict
-import sys  	  	  
+from ImagePainter import ImagePainter
+from FractalFactory import makeFractal, defaultConfig
+from FractalParser import fractalParser
+from PaletteFactory import makePalette
+import sys  
 
-def printFractal(fractalName):  	  	  
-    print("Rendering %s fractal" % fractalName, file=sys.stderr)  	  	  	  	  
-    makeFractal(fractalDict[fractalName], fractalName, fractalDict[fractalName]['type']) 
+def printFractal(fractal, palette, config):
+    print("Rendering %s fractal" % config['imagename'], file=sys.stderr)  	  	  	  	  
+    ImagePainter(fractal, palette, config)
     print("Close the image window to exit the program", file=sys.stderr)  	  	  
 
 
 if len(sys.argv) < 2:
-    print("USAGE: please input the name of one of the following fractals as an argument")
-    for key in fractalDict:
-        print(key)
-    sys.exit(1)
-if sys.argv[1] in fractalDict: 
-    printFractal(sys.argv[1])  	  	    
+    defaultFractal = makeFractal(defaultConfig)
+    defaultPalette = makePalette('America', defaultConfig['iterations'])
+    print("Generating a default Fractal...")
+    print("Generating a default Palette...")
+    printFractal(defaultFractal, defaultPalette, defaultConfig)  	  
+
+elif len(sys.argv) < 3:
+    if sys.argv[1].endswith('.frac'):
+        config = fractalParser(sys.argv[1])
+        fractal = makeFractal(config)
+        palette = makePalette('America', config['iterations'])
+        print("Generating a default Palette...")
+        printFractal(fractal, palette, config)
+    else:
+        print("Please provide a fractal configuration profile")
+
 else: 
-    print(f"ERROR: \'{sys.argv[1]}\' is not a valid fractal.")
-    print("Please select from one of the following:")
-    for key in fractalDict:
-        print(key)
-    sys.exit(1)
+    config = fractalParser(sys.argv[1])
+    fractal = makeFractal(config)
+    palette = makePalette(sys.argv[2], config['iterations'])
+    printFractal(fractal, palette, config)

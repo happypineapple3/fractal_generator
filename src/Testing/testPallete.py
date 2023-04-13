@@ -25,7 +25,7 @@
 
 import unittest  	  	  
 from Palette import mandelPalette, phoenixPalette
-from Phoenix import phoenixIterationCount
+from Fractal import phoenixIterationCount
 from Mandelbrot import mandelIterationCount
 
 class TestPallete(unittest.TestCase):  	  

@@ -24,7 +24,7 @@
 
 
 import unittest  	  	  
-from FractalInformation import fractalDict  
+from FractalFactory import fractalDict  
 
 class TestFractalInformation(unittest.TestCase):  	  	  
     def test_dictionaryLength(self):
