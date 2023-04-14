@@ -52,6 +52,9 @@ def fractalParser(fractFile):
         pass
     f.close()
 
+    if fractalConfig['type'] != 'phoenix' and fractalConfig['type'] != 'mandelbrot' and fractalConfig['type'] != 'julia' and fractalConfig['type'] != 'spider' and fractalConfig['type'] != 'burningship' and fractalConfig['type'] != 'ryan':
+        raise NotImplementedError("The selected fractal type is not supported. Please check the user's manual for a list of valid fractal types")
+
     if fractalConfig['type'] == None:
         raise RuntimeError("Please specify a 'type' of fractal.\nMake sure there is a colon in between the values and nothing is misspelled.")
     if not fractalConfig['type'].isalpha():

@@ -22,7 +22,7 @@
 #       or product names of the Licensor, except as required for  	  	  
 #       reasonable and customary use of the source files.  	  	  
 
-from ImagePainter import ImagePainter
+import ImagePainter
 import FractalFactory
 import FractalParser
 import PaletteFactory
@@ -30,7 +30,7 @@ import sys
 
 def printFractal(fractal, palette, config):
     print("Rendering %s fractal" % config['imagename'], file=sys.stderr)  	  	  	  	  
-    ImagePainter(fractal, palette, config)
+    ImagePainter.ImagePainter(fractal, palette, config)
     print("Close the image window to exit the program", file=sys.stderr)
 
 
@@ -51,8 +51,5 @@ elif len(sys.argv) < 3:
 else: 
     config = FractalParser.fractalParser(sys.argv[1])
     fractal = FractalFactory.makeFractal(config)
-    if sys.argv[2] != 'America' and sys.argv[2] != 'Birthday':
-        raise NotImplementedError("Invalid palette requested")
-    else:
-        palette = PaletteFactory.makePalette(sys.argv[2], config['iterations'])
+    palette = PaletteFactory.makePalette(sys.argv[2], config['iterations'])
     printFractal(fractal, palette, config)

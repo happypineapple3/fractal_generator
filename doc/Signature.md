@@ -18,8 +18,8 @@
 | April 3     | 1 hour     | Read over all the documentation for the assignment.
 | April 7     | 1.5 hours  | Re-read all the documentation and completed out phase 0.
 | April 9     | 3 hours    | Completed all of phase 1.
-| Nocember 22 | 2.5 hours  | Quid de Platone aut de Democrito loquar.
-| Nocember 23 | 0.25 hours | Istic sum, inquit. Quae in controversiam veniunt, de iis, si placet, disseramus.
+| April 12    | 5 hours    | Got most of phase 2 out of the way.
+| April 14    | 5 hours    | Finished phase 2 and phase 3.
 | Nocember 24 | 0 hours    | Id mihi magnum videtur. Eid, Pmurt, Eid. Maximus dolor, inquit, brevis est.
 | Nocember 25 | 3 hours    | Multoque hoc melius nos veriusque quam Stoici.
 | Nocember 26 | 2.25 hours | Rhetorice igitur, inquam, nos mavis quam dialectice disputare.
