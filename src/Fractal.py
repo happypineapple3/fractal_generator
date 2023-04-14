@@ -3,7 +3,7 @@ class Fractal:
         self.iterations = iterations
 
     def count():
-        return None
+        raise NotImplementedError("Concrete subclass of Fractal must implement count() method")
 
 
 class Phoenix(Fractal):
@@ -87,7 +87,7 @@ class Ryan(Fractal):
     def count(self, coordinates):
         z = complex(0,0)
         for i in range(self.iterations):
-            z = coordinates * coordinates + ((z/coordinates)-(coordinates/z)) * z
+            z = coordinates**z
             if abs(z) > 2.0:
                 return i
         return self.iterations-1

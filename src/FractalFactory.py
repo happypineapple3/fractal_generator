@@ -1,13 +1,11 @@
 import Fractal
 
-defaultConfig = {'type': 'julia', 
-                'creal': -1.0125, 
-                'cimag': 0.275, 
-                'pixels': 1024, 
+DEFAULTCONFIG = {'type': 'ryan',
+                'pixels': 500, 
                 'centerx': 0.0, 
                 'centery': 0.0, 
                 'axislength': 4.0, 
-                'iterations': 78, 
+                'iterations': 256, 
                 'min': {'x': -2.0, 
                         'y': -2.0}, 
                 'max': {'x': 2.0,

@@ -24,38 +24,34 @@
 
 
 import unittest  	  	  
-from Palette import mandelPalette, phoenixPalette
-from Fractal import phoenixIterationCount
-from Mandelbrot import mandelIterationCount
+import Palette
 
-class TestPallete(unittest.TestCase):  	  
+class TestPallete(unittest.TestCase):
 
     def test_palleteLength(self):  	  	  
         """Palettes contains the expected number of colors"""
-        dynamic = Dynamic()
-        static = Static()  	  
-        self.assertEqual(500, len(dynamic))
-        self.assertEqual(300, len(static))
+        america0 = Palette.America(100)
+        america1 = Palette.America(500)
+        america2 = Palette.America(1)
+        birthday0 = Palette.Birthday(100)
+        birthday1 = Palette.Birthday(500)
+        birthday2 = Palette.Birthday(1)
+        self.assertEqual(105, len(america0.colors))
+        self.assertEqual(504, len(america1.colors))
+        self.assertEqual(6, len(america2.colors))
+        self.assertEqual(108, len(birthday0.colors))
+        self.assertEqual(510, len(birthday1.colors))
+        self.assertEqual(12, len(birthday2.colors))
 
-    def test_getColor_static(self):  	  	  
-        """static Palette getColor function works properly"""  
-        static = Static()	  	  
-        self.assertEqual(static.getColor(n), color)  	  
-        self.assertEqual(static.getColor(n), color)  	  
-        self.assertEqual(static.getColor(n), color)  	  	  
-        self.assertEqual(static.getColor(n), color)  	  	  
-        self.assertEqual(static.getColor(n), color)  	  	 
 
-
-    def test_getColor_dynamic(self):  	  	  
-        """dynamic Palette getColor function returns colors in their hex form"""
-        dynamic = Dynamic()  	  
-        self.assertTrue(dynamic.getColor(100).startswith('#'))  	  	  
-        self.assertTrue(dynamic.getColor(176).startswith('#'))  	  	  
-        self.assertTrue(dynamic.getColor(1).startswith('#'))  	  	  
-        self.assertTrue(dynamic.getColor(321).startswith('#'))  	  	  
-        self.assertTrue(dynamic.getColor(88).startswith('#'))  	  	  
-        self.assertTrue(dynamic.getColor(250).startswith('#'))  
+    def test_getColor(self):  	  	  
+        """getColor functions return colors in their hex form"""
+        america = Palette.America(300)
+        birthday = Palette.Birthday(300)
+        for i in range(len(america.colors)):     
+            self.assertTrue(america.getColor(i).startswith('#'))
+        for i in range(len(birthday.colors)):
+            self.assertTrue(birthday.getColor(i).startswith('#'))
  	  
 if __name__ == '__main__':  	  	  
     unittest.main()  	  	  

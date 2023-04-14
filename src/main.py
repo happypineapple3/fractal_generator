@@ -23,36 +23,36 @@
 #       reasonable and customary use of the source files.  	  	  
 
 from ImagePainter import ImagePainter
-from FractalFactory import makeFractal, defaultConfig
-from FractalParser import fractalParser
-from PaletteFactory import makePalette
+import FractalFactory
+import FractalParser
+import PaletteFactory
 import sys  
 
 def printFractal(fractal, palette, config):
     print("Rendering %s fractal" % config['imagename'], file=sys.stderr)  	  	  	  	  
     ImagePainter(fractal, palette, config)
-    print("Close the image window to exit the program", file=sys.stderr)  	  	  
+    print("Close the image window to exit the program", file=sys.stderr)
 
 
 if len(sys.argv) < 2:
-    defaultFractal = makeFractal(defaultConfig)
-    defaultPalette = makePalette('America', defaultConfig['iterations'])
+    defaultFractal = FractalFactory.makeFractal(FractalFactory.DEFAULTCONFIG)
+    defaultPalette = PaletteFactory.makePalette(PaletteFactory.DEFAULT_PALETTE, PaletteFactory.DEFAULT_LENGTH)
     print("Generating a default Fractal...")
     print("Generating a default Palette...")
-    printFractal(defaultFractal, defaultPalette, defaultConfig)  	  
+    printFractal(defaultFractal, defaultPalette, FractalFactory.DEFAULTCONFIG)  	  
 
 elif len(sys.argv) < 3:
-    if sys.argv[1].endswith('.frac'):
-        config = fractalParser(sys.argv[1])
-        fractal = makeFractal(config)
-        palette = makePalette('America', config['iterations'])
-        print("Generating a default Palette...")
-        printFractal(fractal, palette, config)
-    else:
-        print("Please provide a fractal configuration profile")
+    config = FractalParser.fractalParser(sys.argv[1])
+    fractal = FractalFactory.makeFractal(config)
+    palette = PaletteFactory.makePalette(PaletteFactory.DEFAULT_PALETTE, config['iterations'])
+    print("Generating a default Palette...")
+    printFractal(fractal, palette, config)
 
 else: 
-    config = fractalParser(sys.argv[1])
-    fractal = makeFractal(config)
-    palette = makePalette(sys.argv[2], config['iterations'])
+    config = FractalParser.fractalParser(sys.argv[1])
+    fractal = FractalFactory.makeFractal(config)
+    if sys.argv[2] != 'America' and sys.argv[2] != 'Birthday':
+        raise NotImplementedError("Invalid palette requested")
+    else:
+        palette = PaletteFactory.makePalette(sys.argv[2], config['iterations'])
     printFractal(fractal, palette, config)

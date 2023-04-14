@@ -30,38 +30,38 @@ class TestFractal(unittest.TestCase):
   	  
     def test_phoenix_count(self):
         """Phoenix count function works properly"""
-        phoenix = Fractal.Phoenix()
-        self.assertEqual(phoenix.count(complex(1.3715877716064453+4.113485813140869j), 102),0)
-        self.assertEqual(phoenix.count(complex(2.3041632358551025-3.0412960052490234j), 102),0)  	  
-        self.assertEqual(phoenix.count(complex(2.6351680938720703-2.4042677879333496j), 102),0)
+        phoenix = Fractal.Phoenix(102, complex(0.5667, 0.0))
+        self.assertEqual(phoenix.count(complex(1.3715877716064453+4.113485813140869j), complex(0.5667, 0.0)),0)
+        self.assertEqual(phoenix.count(complex(2.3041632358551025-3.0412960052490234j), complex(0.5667, 0.0)),0)  	  
+        self.assertEqual(phoenix.count(complex(2.6351680938720703-2.4042677879333496j), complex(0.5667, 0.0)),0)
  	  	  
     def test_mandelbrot_count(self):
         """Mandelbrot count function works properly"""
-        mandel = Fractal.Mandelbrot()
-        self.assertEqual(mandel.count(complex(0.5572265624999999-1.2451171875j), 111), 1) 
-        self.assertEqual(mandel.count(complex(-0.2999081196223699-0.09429218916331959j), 111), 110)  	  	  
-        self.assertEqual(mandel.count(complex(-0.4779296875000001-1.2060546875j), 111), 2)
+        mandel = Fractal.Mandelbrot(111)
+        self.assertEqual(mandel.count(complex(0.5572265624999999-1.2451171875j)), 1) 
+        self.assertEqual(mandel.count(complex(-0.2999081196223699-0.09429218916331959j)), 110)  	  	  
+        self.assertEqual(mandel.count(complex(-0.4779296875000001-1.2060546875j)), 2)
 
     def test_julia_count(self):
         """Julia count function works properly"""
-        julia = Fractal.Julia()
-        self.assertAlmostEqual(julia.count(complex(0.285+0.01j), 200), 141)
-        self.assertAlmostEqual(julia.count(complex(-0.8+0.156j), 200), 95)
-        self.assertAlmostEqual(julia.count(complex(-0.70176-0.3842j), 200), 200)
+        julia = Fractal.Julia(78, (-1.0125+0.275j))
+        self.assertEqual(julia.count(complex(-0.16015625+0.6796875j), (-1.0125+0.275j)), 7)
+        self.assertEqual(julia.count(complex(-0.109375+0.6796875j), (-1.0125+0.275j)), 14)
+        self.assertEqual(julia.count(complex(1.52734375+0.6796875j), (-1.0125+0.275j)), 0)
 
     def test_spider_count(self):
         """Spider count function works properly"""
-        spider = Fractal.Spider()
-        self.assertAlmostEqual(spider.count(complex(0,0), 200), 0)
-        self.assertAlmostEqual(spider.count(complex(10,10), 200), 200)
-        self.assertAlmostEqual(spider.count(complex(.25), 0), 18)
+        spider = Fractal.Spider(200)
+        self.assertEqual(spider.count(complex(0,0)), 199)
+        self.assertEqual(spider.count(complex(10,10)), 0)
+        self.assertEqual(spider.count(complex(.25)), 4)
 
     def test_burning_ship(self):
-        """BurningShip function works properly"""
-        ship = Fractal.BurningShip()
-        self.assertAlmostEqual(ship.count(complex(-1.8, -.08), 200), 39)
-        self.assertAlmostEqual(ship.count(complex(-1.78615, -.0013), 200), 146)
-        self.assertAlmostEqual(ship.count(complex(-1.77457, -.0415), 200), 139)
+        """BurningShip count function works properly"""
+        ship = Fractal.BurningShip(200, (-0.598 + 0.9225j))
+        self.assertEqual(ship.count(complex(-1.8, -.08), (-0.598 + 0.9225j)), 3)
+        self.assertEqual(ship.count(complex(-1.78615, -.0013), (-0.598 + 0.9225j)), 199)
+        self.assertEqual(ship.count(complex(-1.77457, -.0415), (-0.598 + 0.9225j)), 18)
  	  	  
 
 if __name__ == '__main__':  	  	  
