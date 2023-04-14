@@ -48,7 +48,7 @@ newton.frac
 If the user tries using any of these files in the program, then the program will crash.
 
 
-## Error messages and their solution
+## Error messages and their solutions:
 In additon to the error messages listed in the 'How to use:' section, there are several others that are possible for the user to see.
 If the user tries inputting a file that doesn't exist, or if the user misspells the name of a file, then this error message will appear:
 

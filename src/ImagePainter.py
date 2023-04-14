@@ -17,7 +17,6 @@ class ImagePainter:
 
         canvas = Canvas(tkWindow, width=self.config['pixels'], height=self.config['pixels'], background='#000000')  	  	  	  	  
         canvas.create_image((self.config['pixels']//2 +2, self.config['pixels']//2 +2), image=tkPhotoImage, state="normal")  
-        # canvas.create_image((0,0), anchor='nw', image=tkPhotoImage, state="normal")  
 
         canvas.pack()  	  	  
             
