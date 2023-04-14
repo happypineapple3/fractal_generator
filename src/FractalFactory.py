@@ -1,6 +1,6 @@
 import Fractal
 
-DEFAULTCONFIG = {'type': 'ryan',
+DEFAULT_CONFIG = {'type': 'ryan',
                 'pixels': 500, 
                 'centerx': 0.0, 
                 'centery': 0.0, 

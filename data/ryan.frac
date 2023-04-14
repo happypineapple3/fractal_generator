@@ -1,0 +1,9 @@
+# This is my personal fractal file configuration for the Ryan Fractal
+# The equation is pretty basic, but I hope that no one else has taken it yet!
+
+type: ryan
+pixels: 512
+centerx: 0.0
+centery: 0.0
+axislength: 0.2
+iterations: 512

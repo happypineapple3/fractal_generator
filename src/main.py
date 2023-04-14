@@ -35,11 +35,11 @@ def printFractal(fractal, palette, config):
 
 
 if len(sys.argv) < 2:
-    defaultFractal = FractalFactory.makeFractal(FractalFactory.DEFAULTCONFIG)
+    defaultFractal = FractalFactory.makeFractal(FractalFactory.DEFAULT_CONFIG)
     defaultPalette = PaletteFactory.makePalette(PaletteFactory.DEFAULT_PALETTE, PaletteFactory.DEFAULT_LENGTH)
     print("Generating a default Fractal...")
     print("Generating a default Palette...")
-    printFractal(defaultFractal, defaultPalette, FractalFactory.DEFAULTCONFIG)  	  
+    printFractal(defaultFractal, defaultPalette, FractalFactory.DEFAULT_CONFIG)  	  
 
 elif len(sys.argv) < 3:
     config = FractalParser.fractalParser(sys.argv[1])

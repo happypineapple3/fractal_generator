@@ -85,7 +85,7 @@ def fractalParser(fractFile):
     if not is_float(fractalConfig['axislength']):
         raise RuntimeError("The 'axislength' value should be a floating point number.\nMake sure there is a colon in between the values and nothing is misspelled.")
     
-    if (fractalConfig['type'] == 'ryan' or fractalConfig['type'] == 'burningship' or fractalConfig['type'] == 'julia' or fractalConfig['type'] == 'phoenix' or fractalConfig['type'] == 'burningshipjulia'):
+    if (fractalConfig['type'] == 'burningship' or fractalConfig['type'] == 'julia' or fractalConfig['type'] == 'phoenix' or fractalConfig['type'] == 'burningshipjulia'):
         if fractalConfig['creal'] == None:
             raise RuntimeError("The fractal specified requires a 'creal' value, but none is provided.\nMake sure there is a colon in between the values and nothing is misspelled.")
         elif not is_float(fractalConfig['creal']):

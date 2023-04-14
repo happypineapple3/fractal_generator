@@ -1,8 +1,9 @@
 import colour
 
 class Palette:
-    def __init__(self):
+    def __init__(self, length):
         self.colors=[]
+        self.length = length
     
     def getColor(self):
         raise NotImplementedError("Concrete subclass of Palette must implement getColor() method")
@@ -10,11 +11,11 @@ class Palette:
 
 class America(Palette):
     def __init__(self, length):
-        super().__init__()
+        super().__init__(length)
         red = colour.Color('firebrick')
         white = colour.Color('white')
         blue = colour.Color('blue')
-        section = length//3+2
+        section = self.length//3+2
         
         self.colors = (list(c.hex for c in red.range_to(white, section)) +
                            list(c.hex for c in white.range_to(blue, section)) +
@@ -26,14 +27,14 @@ class America(Palette):
 
 class Birthday(Palette):
     def __init__(self, length):
-        super().__init__()
+        super().__init__(length)
         red = colour.Color('firebrick')
         blue = colour.Color('blue')
         pink = colour.Color('pink')
         yellow = colour.Color('yellow')
         purple = colour.Color('purple')
         green = colour.Color('green')
-        section = length//6+2
+        section = self.length//6+2
 
         self.colors = (list(c.hex for c in pink.range_to(green, section)) +
                            list(c.hex for c in green.range_to(red, section)) +
