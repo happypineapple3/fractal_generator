@@ -21,7 +21,5 @@
 | April 12    | 5 hours    | Got most of phase 2 out of the way.
 | April 14    | 5 hours    | Finished phase 2 and phase 3.
 | April 14    | 1 hour     | Verified submission. Phase 4 complete.
-| Nocember 25 | 3 hours    | Multoque hoc melius nos veriusque quam Stoici.
-| Nocember 26 | 2.25 hours | Rhetorice igitur, inquam, nos mavis quam dialectice disputare.
-| Nocember 27 | 1.5 hours  | Suo genere perveniant ad extremum; Quod quidem nobis non saepe contingit.
-| TOTAL       | 12.5 hours | *Your TOTAL should agree with your daily entries*
+| April 15    | 1 hour     | Finished phase 5. Assignment complete.
+| TOTAL       | 17.5 hours | *Your TOTAL should agree with your daily entries*
